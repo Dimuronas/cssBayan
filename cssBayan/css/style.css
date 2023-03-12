@@ -1,0 +1,179 @@
+/*Обнуление*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,
+:active {
+    outline: none;
+}
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+button {
+    cursor: pointer;
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+a,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+/*--------------------*/
+
+body {
+    background-color: antiquewhite;
+}
+
+.header {
+    max-width: 80%;
+    margin: 1rem auto;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.mem {
+    max-width: 80%;
+    margin: 1rem auto;
+    font-weight: bold;
+}
+
+.mem-item {
+    border-top: 0.2rem solid rgb(108, 108, 108);
+    padding-bottom: 1rem;
+}
+
+.mem-label {
+    cursor: pointer;
+    padding: 0.5rem 0rem;
+    display: block;
+    transition: color 0.5s ease-out;
+}
+
+.mem-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mem-input {
+    appearance: none;
+}
+
+.mem-input:checked ~ .mem-img {
+    transform: scale(1);
+    opacity: 1;
+    height: 100%;
+}
+
+.mem-input:checked ~ .mem-title .arrow {
+    transform: rotate(90deg);
+}
+.mem-input:checked ~ .mem-title {
+    color: blue;
+}
+
+.mem-img {
+    text-align: center;
+    height: 0;
+    opacity: 0;
+    transform: scale(0);
+    transition-duration: 500ms;
+}
+
+.mem-img img {
+    width: 50%;
+}
+
+.arrow {
+    transition-duration: 500ms;
+}
+
+@media (hover: hover) {
+    .mem-item:hover .mem-img {
+        transform: scale(1);
+        height: 100%;
+        opacity: 1;
+    }
+
+    .mem-item:hover .arrow {
+        transform: rotate(90deg);
+    }
+
+    .mem-item:hover .mem-title {
+        color: blue;
+    }
+}
+
+@media (max-width: 320px) {
+    .mem {
+        font-size: 1rem;
+    }
+}
+@media (min-width: 820px) and (max-width: 1920px) {
+    .mem {
+        font-size: 1.5rem;
+    }
+}
+@media (min-width: 1920px) {
+    .mem {
+        font-size: 2rem;
+    }
+}
