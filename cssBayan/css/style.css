@@ -117,27 +117,10 @@ body {
     appearance: none;
 }
 
-/* next after mem-input element */
 .mem-input:checked ~ .mem-img {
     transform: scale(1);
     opacity: 1;
     height: 100%;
-}
-
-@media (hover: hover) {
-    .mem-item:hover .mem-img {
-        transform: scale(1);
-        height: 100%;
-        opacity: 1;
-    }
-
-    .mem-item:hover .arrow {
-        transform: rotate(90deg);
-    }
-
-    .mem-item:hover .mem-title {
-        color: blue;
-    }
 }
 
 .mem-input:checked ~ .mem-title .arrow {
@@ -161,6 +144,22 @@ body {
 
 .arrow {
     transition-duration: 500ms;
+}
+
+@media (hover: hover) {
+    .mem-item:hover .mem-img {
+        transform: scale(1);
+        height: 100%;
+        opacity: 1;
+    }
+
+    .mem-item:hover .arrow {
+        transform: rotate(90deg);
+    }
+
+    .mem-item:hover .mem-title {
+        color: blue;
+    }
 }
 
 @media (max-width: 320px) {
