@@ -84,48 +84,97 @@ body {
 }
 
 .header {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 80%;
+    margin: 1rem auto;
     font-size: x-large;
     font-weight: bold;
 }
 
 .mem {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 80%;
+    margin: 1rem auto;
     font-weight: bold;
 }
 
 .mem-item {
-    border-top: 4px solid rgb(108, 108, 108);
-    padding-bottom: 20px;
+    border-top: 0.2rem solid rgb(108, 108, 108);
+    padding-bottom: 1rem;
 }
-.mem-title {
-    padding: 20px 0px;
-    display: block;
-    cursor: pointer;
 
+.mem-label {
+    cursor: pointer;
+    padding: 0.5rem 0rem;
+    display: block;
     transition: color 0.5s ease-out;
 }
 
-.mem-title:hover {
-    color: blue;
+.mem-title {
+    display: flex;
+    justify-content: space-between;
 }
+
 .mem-input {
     appearance: none;
-    position: absolute;
 }
 
 /* next after mem-input element */
 .mem-input:checked ~ .mem-img {
-    display: block;
+    transform: scale(1);
+    opacity: 1;
+    height: 100%;
+}
+
+@media (hover: hover) {
+    .mem-item:hover .mem-img {
+        transform: scale(1);
+        height: 100%;
+        opacity: 1;
+    }
+
+    .mem-item:hover .arrow {
+        transform: rotate(90deg);
+    }
+
+    .mem-item:hover .mem-title {
+        color: blue;
+    }
+}
+
+.mem-input:checked ~ .mem-title .arrow {
+    transform: rotate(90deg);
+}
+.mem-input:checked ~ .mem-title {
+    color: blue;
 }
 
 .mem-img {
-    display: none;
     text-align: center;
+    height: 0;
+    opacity: 0;
+    transform: scale(0);
+    transition-duration: 500ms;
 }
 
 .mem-img img {
     width: 50%;
+}
+
+.arrow {
+    transition-duration: 500ms;
+}
+
+@media (max-width: 320px) {
+    .mem {
+        font-size: 1rem;
+    }
+}
+@media (min-width: 820px) and (max-width: 1920px) {
+    .mem {
+        font-size: 1.5rem;
+    }
+}
+@media (min-width: 1920px) {
+    .mem {
+        font-size: 2rem;
+    }
 }
